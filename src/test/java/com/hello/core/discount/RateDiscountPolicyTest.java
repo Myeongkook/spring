@@ -1,8 +1,10 @@
 package com.hello.core.discount;
 
+import com.hello.core.AppConfig;
 import com.hello.core.member.Grade;
 import com.hello.core.member.Member;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +14,14 @@ import static org.junit.jupiter.api.Assertions.*;
 class RateDiscountPolicyTest {
 
 
-    RateDiscountPolicy rateDiscountPolicy = new RateDiscountPolicy();
+    DiscountPolicy rateDiscountPolicy;
+
+    @BeforeEach
+    void forEach(){
+        AppConfig appConfig = new AppConfig();
+        rateDiscountPolicy = appConfig.discountPolicy();
+    }
+
 
     @Test
     @DisplayName("VIP는 10% 할인이 적용되어야 한다.")
