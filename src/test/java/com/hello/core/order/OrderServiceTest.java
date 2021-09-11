@@ -1,11 +1,14 @@
 package com.hello.core.order;
 
 import com.hello.core.AppConfig;
+import com.hello.core.AutoAppConfig;
 import com.hello.core.discount.RateDiscountPolicy;
 import com.hello.core.member.*;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class OrderServiceTest {
 
